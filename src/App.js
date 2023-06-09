@@ -30,8 +30,8 @@ const sample = (name) => {
 console.log(sample('dodi'));
 
 // tampilkan properties dr sebuah object 
-function getProps(obj, propsName) {
-  return obj[propsName];
+function getProps(objpropsName) {
+  return objpropsName;
 }
 
 const cartItem = {
@@ -42,9 +42,17 @@ const cartItem = {
   cartID: 201,
 }
 
-const 
+const namaItem = getProps(cartItem.itemName);
+  console.log(namaItem);
+
+const itemQuantity = getProps(cartItem.itemQuantity);
+  console.log(itemQuantity);
+
+
+
 
   return (  
+    <>
     <div className="w-full h-screen text-center bg-slate-700">
      <div className="text-3xl text-white">
      2.a {cityName}
@@ -63,11 +71,16 @@ const
       </div>    
      <div className="text-3xl text-white">
       4.b {sample('150')}
+      </div>
+
+      <div className="buttonwrapper w-[400px] mx-auto bg-slate-300 rounded-lg py-10 mt-4  ">
+        <button className="px-6 py-4 bg-black rounded-lg text-white" onClick={() => {}}>click me</button>
       </div>    
       {/* <SpaceBetween />
       <Salam/>
       <Copyright/> */}
     </div>
+    </>
   );
 }
 
