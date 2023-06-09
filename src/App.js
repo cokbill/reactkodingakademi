@@ -29,8 +29,21 @@ const sample = (name) => {
 };
 console.log(sample('dodi'));
 
+// tampilkan properties dr sebuah object 
+function getProps(obj, propsName) {
+  return obj[propsName];
+}
 
-// 
+const cartItem = {
+  itemID : 1,
+  itemName : "shoe nike",
+  itemPrice : "$56",
+  itemQuantity : 2,
+  cartID: 201,
+}
+
+const 
+
   return (  
     <div className="w-full h-screen text-center bg-slate-700">
      <div className="text-3xl text-white">
