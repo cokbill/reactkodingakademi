@@ -1,6 +1,7 @@
 import SpaceBetween from "./spacebetween";
 import Salam from "./selamatdatang";
 import Copyright from "./copyright";
+import React, {useState} from "react";
 
 function App() {
   // create js variable 
@@ -29,25 +30,62 @@ const sample = (name) => {
 };
 console.log(sample('dodi'));
 
-// tampilkan properties dr sebuah object 
-function getProps(objpropsName) {
-  return objpropsName;
+
+
+const CartItem = {
+      itemID : 1,
+    itemName : "shoe nike",
+    itemPrice : "$56",
+    itemQuantity : 2,
+    cartID: 201,
+}
+function GetNameQty(myobj) {
+  return myobj.itemName + " " + myobj.itemQuantity;
 }
 
-const cartItem = {
-  itemID : 1,
-  itemName : "shoe nike",
-  itemPrice : "$56",
-  itemQuantity : 2,
-  cartID: 201,
+console.log(GetNameQty(CartItem));
+
+// tampilkan string berupa backtick petik 2 petik 1
+const stringA = 'this is bootcamp';
+const stringB = "FULLSTACK WEB DEVELOPER";
+const strC = `by "Koding Akademi"`;
+
+// array 
+const fruits = ["jambu", "mangga", "durian", "anggur"];
+
+// jumlah array
+  const jumlahFruits = fruits.length;
+
+  // ganti value durian
+  const newFruits = fruits.map((fruit, index) => {
+    if (index === 2) {
+      return "salak";
+    } 
+    return fruit;
+  })
+
+  // tambahkan value rambutan
+  const tambahfruits = fruits.push("Rambutan");
+  console.log(tambahfruits);
+
+  // sum return a + b > 100
+  function ifSum(a, b) {
+  return a + b < 100 ? true : false;
+  }
+
+  console.log(ifSum(50, 40));
+
+
+// for in statement 
+const student = {
+  name : "wayan suksma",
+  age : 30,
+  hobbies : ['membaca', 'ngoding', 'tidur'],
+};
+
+for ( const s in student ) {
+  console.log(student[s]);
 }
-
-const namaItem = getProps(cartItem.itemName);
-  console.log(namaItem);
-
-const itemQuantity = getProps(cartItem.itemQuantity);
-  console.log(itemQuantity);
-
 
 
 
@@ -72,16 +110,22 @@ const itemQuantity = getProps(cartItem.itemQuantity);
      <div className="text-3xl text-white">
       4.b {sample('150')}
       </div>
-
+      <div className=" textwrapper w-[450px] mx-auto bg-slate-300 rounded-lg py-6"> 
+      <div className="text-3xl text-white">{stringA}</div>
+      <div className="text-3xl text-white">{stringB}</div>
+      <div className="text-3xl text-white">{strC}</div>
+      </div>
       <div className="buttonwrapper w-[400px] mx-auto bg-slate-300 rounded-lg py-10 mt-4  ">
-        <button className="px-6 py-4 bg-black rounded-lg text-white" onClick={() => {}}>click me</button>
-      </div>    
+      <div className="text-3xl text-white"></div>
+        <button className="px-6 py-4 bg-black rounded-lg text-white" onClick={()=> GetNameQty(CartItem)}>click me</button>
+      </div>
+      <div className="text-3xl text-white">jumlah dr array fruits : {jumlahFruits}</div>
       {/* <SpaceBetween />
       <Salam/>
       <Copyright/> */}
     </div>
     </>
   );
-}
+};
 
 export default App;
