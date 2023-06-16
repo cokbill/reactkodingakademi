@@ -1,4 +1,5 @@
 import React from "react";
+import Mycomponent from "./mycomponent";
 
 function App() {
   const tittle = "koding akademi"
@@ -42,10 +43,23 @@ function App() {
       objectID : 2,
      },
    ]
+
+
+   const handleChange = (event) => {
+     console.log(event.target.value);
+   }
+
+   const handleClick = (event) => {
+     console.log(event.target.value);
+   }
+
+   const showAlertName =(name, address) => {
+     alert(`${name} ${address}`);
+   }
    
   return (    
     <div className="App text-center font-bold text-3xl">
-      selamat datang di {tittle}
+      {/* selamat datang di {tittle}
       <h1 className="my-5">{wellcome.greeting} di {wellcome.tittle}</h1>
       <h1 className="text-red-600"> {myElement} </h1>
       <label htmlFor="search"> Search </label>
@@ -66,8 +80,15 @@ function App() {
             </div>
           )
         })
-      }   
+      }    */}
+
+      <label htmlFor="search"></label>
+      <input id="search" type="text" className="border-slate-300" onChange={handleChange} />
+      <button id="mybutton" onClick={handleClick} name="btnsearch" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">search</button>
+      <button id="mybutton" onClick={() => showAlertName("cokbill", "denpasar bali")} name="btnsearch" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">search</button>
+      <Mycomponent/>
     </div>
+    
           
   );
 };
